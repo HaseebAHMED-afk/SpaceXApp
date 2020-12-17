@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
-import LaunchPage from './Components/Launch/LaunchPage';
-import LaunchInfoPage from './Components/LaunchInfo/LaunchInfoPage';
+import MainNav from './Components/MainNav/MainNav';
 import TopNav from './Components/TopNav/TopNav';
 
 function App() {
@@ -10,9 +9,7 @@ function App() {
     <div className="App">
       <Router>
       <TopNav />
-      {/* <LaunchPage />
-      <LaunchInfoPage /> */}
-      
+      <MainNav />
       </Router>
     </div>
   );
