@@ -14,7 +14,7 @@ const LaunchContainer = () =>{
     }
 
     if(data){
-        return <Launch data={data} /> 
+        return <Launch data={data} />
     }
 
 }

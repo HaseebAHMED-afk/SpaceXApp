@@ -7,6 +7,8 @@ interface Props {
 }
 
 const Launch: React.FC<Props> = ({data}) => {
+
+
     return (
         <div className="Launches">
             <h3>SpaceX Launches</h3>
@@ -17,7 +19,7 @@ const Launch: React.FC<Props> = ({data}) => {
                         <li key={i} className="launch-item">
                             <h1>{launch.mission_name}</h1>
                             <p>{launch.launch_year}</p>
-                            <p>{launch.launch_success}</p>
+                            <p>{launch.launch_success ? "Success" : (launch.launch_success === false ? "Failed" : "Upcoming")}</p>
                         </li>
                     )
                 )}

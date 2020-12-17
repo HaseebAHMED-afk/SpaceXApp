@@ -5,7 +5,7 @@ import { ApolloProvider,InMemoryCache,ApolloClient } from '@apollo/client'
 
 
 const client = new ApolloClient({
-  uri: 'https://http://spacexdata.herokuapp.com/graphql',
+  uri: 'https://spacexdata.herokuapp.com/graphql',
   cache: new InMemoryCache()
 })
 

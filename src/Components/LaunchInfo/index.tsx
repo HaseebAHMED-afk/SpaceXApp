@@ -22,4 +22,4 @@ const LaunchContainerDetails = () =>{
     }
 }
 
-export default LaunchInfo;
+export default LaunchContainerDetails;
