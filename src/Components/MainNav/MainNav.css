@@ -1,0 +1,23 @@
+.main-nav{
+    text-align: center;
+    background-color: black;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color:white;
+    display: block;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    position: relative;
+    margin-left: 25px;
+    margin-right: 25px;
+    transition: color 0.5s ;
+    transition-timing-function: ease-in-out;
+}
+
+a:hover{
+    color: rgb(145, 143, 143);
+}

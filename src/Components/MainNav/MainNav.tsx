@@ -1,16 +1,15 @@
 import React from 'react'
 import './MainNav.css'
-import { Link, Route, Routes } from 'react-router-dom'
-import LaunchPage from '../Launch/LaunchPage'
+import { Link } from 'react-router-dom'
 
 const MainNav = () => {
     return (
         <div className="main-nav">
-            <Link to="/launches">Launches</Link>
+            <Link to="/" ><p>Home</p></Link>
+            <Link to="/launches"><p>Launches</p></Link>
+            <Link to="/rockets"><p>Rockets</p></Link>
+            <Link to="/ships"><p>Ships</p></Link>
             
-            <Routes>
-                <Route path="/launches" element={<LaunchPage />} />
-            </Routes>
         </div>
     )
 }

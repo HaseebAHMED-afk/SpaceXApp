@@ -1,11 +1,12 @@
 import React from 'react'
+import './Home.css'
 
-const Ships = () => {
+const Home = () => {
     return (
         <div>
-            Ship Page
+            Home
         </div>
     )
 }
 
-export default Ships
+export default Home
