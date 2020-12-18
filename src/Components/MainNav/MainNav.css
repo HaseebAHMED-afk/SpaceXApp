@@ -21,3 +21,9 @@ a{
 a:hover{
     color: rgb(145, 143, 143);
 }
+
+@media only screen and (max-width: 450px){
+    .main-nav{
+        display: block;
+    }
+}
