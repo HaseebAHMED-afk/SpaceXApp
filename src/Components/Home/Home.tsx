@@ -3,6 +3,9 @@ import { Button } from '@material-ui/core'
 import './Home.css'
 
 const Home : React.FC = () => {
+
+
+   
     return (
         <div>
             <img className="spacex-img" src="https://www.teslarati.com/wp-content/uploads/2019/06/Starlink-coverage-Earth-SpaceX-2-crop.jpg" alt="spacex-img" />
@@ -39,11 +42,11 @@ const Home : React.FC = () => {
             </div>
 
             <div className="dragon-sim">
-                <img className="iss" src="https://spacecraftearth.com/wp-content/uploads/2017/06/ISS-Earth-Mediterranean-2.jpg" alt="iss-img" />
-                <div>
-                <h1 className="heading">SpaceX Dragon 2 Simulator</h1>
-                <p className="heading">Dock the SpaceX Dragon 2 Satellite to the International Space Station in this realtime simulator with the controls our astronauts use on their missions</p>
-                <Button variant="contained"><a href="https://iss-sim.spacex.com/">Try Now</a></Button>
+                <img  className="iss" src="https://spacecraftearth.com/wp-content/uploads/2017/06/ISS-Earth-Mediterranean-2.jpg" alt="iss-img" />
+                <div className="heading-section">
+                <h1 className="dgs-heading">SpaceX Dragon 2 Simulator</h1>
+                <p className="dgs-para">Dock the SpaceX Dragon 2 Satellite to the International Space Station in this realtime simulator with the controls our astronauts use on their missions.</p>
+                <Button variant='outlined' className="dgs-btn"><a href="https://iss-sim.spacex.com/">Try Now</a></Button>
                 </div>
             </div>
             

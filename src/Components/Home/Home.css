@@ -59,10 +59,33 @@ h1{
 
 .dragon-sim{
     text-align: center;
+    overflow: hidden;
 }
 
 .iss{
     width: 100%;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+}
+.heading-section{
+    margin-top: 250px;
+    pointer-events: none;
+}
+.dgs-heading{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+}
+.dgs-para{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.iss:hover{
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
 }
 
 @media only screen and (max-width: 700px){
