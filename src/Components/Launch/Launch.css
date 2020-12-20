@@ -1,4 +1,4 @@
-.heading-section{
+.launch-heading-section{
     text-align: center;
     color: white;
     margin: 25px auto;
@@ -39,10 +39,16 @@
     .launch-card{
         width: 45%;
     }
+    .launch-success{
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 350px){
     .launch-card{
         width: 100%
+    }
+    .launch-success{
+        display: block;
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
 import './Home.css'
-import Footer from '../Footer/Footer'
+import Footer from '../Utils/Footer/Footer'
 
 const Home : React.FC = () => {
 

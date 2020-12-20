@@ -1,5 +1,9 @@
 import React from 'react'
 import { LaunchesQuery } from  '../../generated/graphql'
+import Failure from '../Utils/Failure/Failure'
+import Footer from '../Utils/Footer/Footer'
+import Success from '../Utils/Success/Success'
+import Upcoming from '../Utils/Upcoming/Upcoming'
 import './Launch.css'
 
 interface Props {
@@ -11,7 +15,7 @@ const Launch: React.FC<Props> = ({data}) => {
 
     return (
         <div className="launches">
-            <div className="heading-section">
+            <div className="launch-heading-section">
             <h1 className="main-heading">SpaceX Launches</h1>
             <p className="main-para">See the launches that describe SpaceX's journey to the great beyond</p>
             </div>
@@ -24,13 +28,13 @@ const Launch: React.FC<Props> = ({data}) => {
                         <div  key={i} className="launch-card">
                         <h2 className="launch-name">{launch.mission_name}</h2>
                        <p className="launch-year">{launch.launch_year}</p>
-                      <p className="launch-success" >{launch.launch_success ? "Success" : (launch.launch_success === false ? "Failed" : "Upcoming")}</p>
+                      <p className="launch-success" >{launch.launch_success ? <Success /> : (launch.launch_success === false ? <Failure /> : <Upcoming />)}</p>
                 </div>
                     )
                 )}
-
-                
             </div>
+
+            <Footer />
 
         </div>
     )
