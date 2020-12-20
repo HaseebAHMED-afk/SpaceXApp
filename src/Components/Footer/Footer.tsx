@@ -4,7 +4,7 @@ import "./Footer.css"
 const Footer = () => {
     return (
         <div className="footer" >
-            <p>Haseeb Ahmed Enterprise™</p>
+            <p className="footer-para">Haseeb Ahmed Enterprise™</p>
         </div>
     )
 }

@@ -10,20 +10,28 @@ const Launch: React.FC<Props> = ({data}) => {
 
 
     return (
-        <div className="Launches">
-            <h3>SpaceX Launches</h3>
-            <ol className="launches-ol">
-                {!!data.launches && data.launches.map(
+        <div className="launches">
+            <div className="heading-section">
+            <h1 className="main-heading">SpaceX Launches</h1>
+            <p className="main-para">See the launches that describe SpaceX's journey to the great beyond</p>
+            </div>
+
+            <div className="launch-deck">
+
+            {!!data.launches && data.launches.map(
                     (launch,i) => !!launch && 
                      (
-                        <li key={i} className="launch-item">
-                            <h1>{launch.mission_name}</h1>
-                            <p>{launch.launch_year}</p>
-                            <p>{launch.launch_success ? "Success" : (launch.launch_success === false ? "Failed" : "Upcoming")}</p>
-                        </li>
+                        <div  key={i} className="launch-card">
+                        <h2 className="launch-name">{launch.mission_name}</h2>
+                       <p className="launch-year">{launch.launch_year}</p>
+                      <p className="launch-success" >{launch.launch_success ? "Success" : (launch.launch_success === false ? "Failed" : "Upcoming")}</p>
+                </div>
                     )
                 )}
-            </ol>
+
+                
+            </div>
+
         </div>
     )
 }

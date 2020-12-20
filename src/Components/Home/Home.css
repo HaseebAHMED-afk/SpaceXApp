@@ -59,7 +59,6 @@ h1{
 
 .dragon-sim{
     text-align: center;
-    /* position: relative; */
     background: url('https://spacecraftearth.com/wp-content/uploads/2017/06/ISS-Earth-Mediterranean-2.jpg') fixed no-repeat;
     background-size: cover;
     height: 550px;
@@ -67,15 +66,6 @@ h1{
     overflow: hidden;
 }
 
-.iss{
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    left: 0;
-    transition: all 0.5s ease-in-out;
-    height: auto;
-    object-fit: cover;
-}
 .heading-section{
     margin-top: 215px;
 }
