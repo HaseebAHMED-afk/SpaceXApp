@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
 import './Home.css'
+import Footer from '../Footer/Footer'
 
 const Home : React.FC = () => {
 
@@ -41,15 +42,22 @@ const Home : React.FC = () => {
             </div>
             </div>
 
-            <div className="dragon-sim">
+            {/* <div className="dragon-sim">
                 <img  className="iss" src="https://spacecraftearth.com/wp-content/uploads/2017/06/ISS-Earth-Mediterranean-2.jpg" alt="iss-img" />
                 <div className="heading-section">
+                <h1 className="dgs-heading">SpaceX Dragon 2 Simulator</h1>
+                <p className="dgs-para">Dock the SpaceX Dragon 2 Satellite to the International Space Station in this realtime simulator with the controls our astronauts use on their missions.</p>
+                
+                </div>
+            </div>    */}
+            <div className="dragon-sim">
+                <div className="heading-section" >
                 <h1 className="dgs-heading">SpaceX Dragon 2 Simulator</h1>
                 <p className="dgs-para">Dock the SpaceX Dragon 2 Satellite to the International Space Station in this realtime simulator with the controls our astronauts use on their missions.</p>
                 <Button variant='outlined' className="dgs-btn"><a href="https://iss-sim.spacex.com/">Try Now</a></Button>
                 </div>
             </div>
-            
+            <Footer />     
         </div> 
     )
 }

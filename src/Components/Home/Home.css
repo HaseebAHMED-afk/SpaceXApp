@@ -59,6 +59,11 @@ h1{
 
 .dragon-sim{
     text-align: center;
+    /* position: relative; */
+    background: url('https://spacecraftearth.com/wp-content/uploads/2017/06/ISS-Earth-Mediterranean-2.jpg') fixed no-repeat;
+    background-size: cover;
+    height: 550px;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -68,10 +73,11 @@ h1{
     position: absolute;
     left: 0;
     transition: all 0.5s ease-in-out;
+    height: auto;
+    object-fit: cover;
 }
 .heading-section{
-    margin-top: 250px;
-    pointer-events: none;
+    margin-top: 215px;
 }
 .dgs-heading{
     color: white;
@@ -83,10 +89,7 @@ h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.iss:hover{
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
-}
+
 
 @media only screen and (max-width: 700px){
     .card-deck{
@@ -96,5 +99,18 @@ h1{
     .card{
         width: 75%;
         margin: 25px auto ;
+    }
+    .iss{
+        height: 700px;
+    }
+    .heading-section{
+        top: 50%;
+        margin-top: 250px;
+    }
+}
+
+@media only screen and (max-width: 1560px){
+    .heading-section{
+        margin-top: 250px;
     }
 }
