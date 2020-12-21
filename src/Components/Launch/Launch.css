@@ -11,7 +11,7 @@
 }
 
 .launch-deck{
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -34,6 +34,8 @@
     display: inline;
     font-size: 100%;
 }
+
+
 
 @media only screen and (max-width:700px) {
     .launch-card{
