@@ -18,9 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/launches" element={<LaunchPage />} />
-          <Route path=":id" element={<LaunchInfoPage />} />
           <Route path="/rockets" element={<RocketPage />} />
           <Route path="/ships" element={<ShipsPage />} />
+          <Route path=":mission" element={<LaunchInfoPage />} />  {/* custom parameter route */}
         </Routes>
       </Router>
     </div>
