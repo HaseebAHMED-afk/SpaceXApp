@@ -17,9 +17,8 @@ function App() {
         <MainNav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/launches" element={<LaunchPage />} >
-            <Route path=":id" element={<LaunchInfoPage />} />
-          </Route>
+          <Route path="/launches" element={<LaunchPage />} />
+          <Route path=":id" element={<LaunchInfoPage />} />
           <Route path="/rockets" element={<RocketPage />} />
           <Route path="/ships" element={<ShipsPage />} />
         </Routes>

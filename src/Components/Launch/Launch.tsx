@@ -26,13 +26,12 @@ const Launch: React.FC<Props> = ({data}) => {
             {!!data.launches && data.launches.map(
                     (launch,i) => !!launch && 
                      (
-                        //  <Link to={`${launch.mission_name}`} >
                         <div  key={i} className="launch-card">
                         <h2 className="launch-name">{launch.mission_name}</h2>
                        <p className="launch-year">{launch.launch_year}</p>
                       <p className="launch-success" >{launch.launch_success ? <Success /> : (launch.launch_success === false ? <Failure /> : <Upcoming />)}</p>
+                      <Link to={`${launch.mission_name}`} ><button className="viewmore-btn" >View More</button></Link>
                 </div>
-                // </Link>
                  )
                 )}
             </div>

@@ -6,14 +6,17 @@ interface Props {
     data: LaunchInfoQuery
 }
 
+
+
 const LaunchInfo: React.FC<Props> = ({data}) => {
+
 
     if(!data.launch){
         return <div>No data available</div>
     }
 
     return (
-        <div>
+        <div className="launch-info">
             <h1>{data.launch.mission_name}</h1>
             <p>{data.launch.launch_date_utc}</p>
             <p>{data.launch.launch_success}</p>

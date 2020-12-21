@@ -35,14 +35,43 @@
     font-size: 100%;
 }
 
+.viewmore-btn{
+    display: block !important;
+    margin: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: transparent;
+    border: rgb(52, 179, 2) 1px solid;
+    height: 30px;
+    border-radius: 2px;
+    color: rgb(52, 179, 2);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
 
+.viewmore-btn:focus{
+    outline: none;
+}
+.viewmore-btn:hover{
+    color: white;
+    background-color: rgb(52, 179, 2);
+}
+
+a{
+    text-decoration: none;
+}
 
 @media only screen and (max-width:700px) {
     .launch-card{
         width: 45%;
+        height: 150px;
+        text-align: center;
+        justify-content: center;
     }
     .launch-success{
         display: block;
+    }
+    .viewmore-btn{
+        margin: auto;
     }
 }
 

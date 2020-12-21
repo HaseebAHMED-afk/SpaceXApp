@@ -1,9 +1,13 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { useLaunchInfoQuery } from '../../generated/graphql'
 import LaunchInfo from './LaunchInfo';
 
 const LaunchContainerDetails = () =>{
-    const {data,error,loading} = useLaunchInfoQuery({variables:{id : "13"}});
+
+    let {mission} = useParams();
+
+    const {data,error,loading} = useLaunchInfoQuery({variables:{id : mission}});
 
     if(loading){
         return <div>Data is Loading</div>
