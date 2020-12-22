@@ -17,10 +17,10 @@ function App() {
         <MainNav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/launches" element={<LaunchPage />} />
+          <Route path="/launches" element={<LaunchPage />} ></Route>
           <Route path="/rockets" element={<RocketPage />} />
           <Route path="/ships" element={<ShipsPage />} />
-          <Route path=":mission" element={<LaunchInfoPage />} />  {/* custom parameter route */}
+          <Route path="/launches/:flight_number" element={<LaunchInfoPage />} />  {/* custom parameter route */}
         </Routes>
       </Router>
     </div>

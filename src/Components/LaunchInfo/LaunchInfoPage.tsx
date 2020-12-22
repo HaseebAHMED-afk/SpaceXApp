@@ -4,14 +4,11 @@ import LaunchContainerDetails from './index'
 
 const LaunchInfoPage = () => {
 
-    let {mission} = useParams();
-
-    console.log(mission);
-    
+    let { flight_number } =useParams();
 
     return (
         <div>
-            {LaunchContainerDetails()}
+            {LaunchContainerDetails(flight_number)}
         </div>
     )
 }

@@ -2,10 +2,9 @@ import React from 'react';
 import { useLaunchInfoQuery } from '../../generated/graphql'
 import LaunchInfo from './LaunchInfo';
 
-const LaunchContainerDetails = () =>{
-    
-    
-    const {data,error,loading} = useLaunchInfoQuery({variables:{id : `13`}});
+const LaunchContainerDetails = (flight_number: string) =>{
+
+    const {data,error,loading} = useLaunchInfoQuery({variables: {id : flight_number}});
 
     if(loading){
         return <div>Data is Loading</div>

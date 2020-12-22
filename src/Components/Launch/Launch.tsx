@@ -30,7 +30,7 @@ const Launch: React.FC<Props> = ({data}) => {
                         <h2 className="launch-name">{launch.mission_name}</h2>
                        <p className="launch-year">{launch.launch_year}</p>
                       <p className="launch-success" >{launch.launch_success ? <Success /> : (launch.launch_success === false ? <Failure /> : <Upcoming />)}</p>
-                      <Link to={`${launch.mission_name}`} ><button className="viewmore-btn" >View More</button></Link>
+                      <Link to={`/launches/${launch.flight_number}`} ><button className="viewmore-btn" >View More</button></Link>
                 </div>
                  )
                 )}
