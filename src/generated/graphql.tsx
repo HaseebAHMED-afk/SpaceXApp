@@ -778,7 +778,7 @@ export type RocketInfoQuery = (
   { __typename?: 'Query' }
   & { rocket?: Maybe<(
     { __typename?: 'Rocket' }
-    & Pick<Rocket, 'active' | 'company' | 'cost_per_launch' | 'country' | 'description' | 'first_flight' | 'rocket_name' | 'rocket_type' | 'rocket_id'>
+    & Pick<Rocket, 'active' | 'company' | 'cost_per_launch' | 'country' | 'description' | 'flickr_images' | 'first_flight' | 'rocket_name' | 'rocket_type' | 'rocket_id'>
     & { engines?: Maybe<(
       { __typename?: 'Engines' }
       & Pick<Engines, 'type' | 'version'>
@@ -893,6 +893,7 @@ export const RocketInfoDocument = gql`
     cost_per_launch
     country
     description
+    flickr_images
     engines {
       type
       version

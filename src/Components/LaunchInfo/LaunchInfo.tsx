@@ -4,6 +4,7 @@ import Success from '../Utils/Success/Success'
 import Failure from '../Utils/Failure/Failure'
 import Upcoming from '../Utils/Upcoming/Upcoming'
 import './LaunchInfo.css'
+import Footer from '../Utils/Footer/Footer'
 
 interface Props {
     data: LaunchInfoQuery
@@ -47,6 +48,7 @@ const LaunchInfo: React.FC<Props> = ({data}) => {
                </>) : <p className="not-found" >No Images Found</p>
            }
            </div>
+           <Footer />
         </div>
     )
 }

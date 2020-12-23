@@ -8,6 +8,7 @@ query RocketInfo($id: String!){
       cost_per_launch
       country
       description
+      flickr_images
       engines {
         type
         version
