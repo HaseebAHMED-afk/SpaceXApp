@@ -1,0 +1,22 @@
+.rocket{
+    color: white;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.rocket-card-deck{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+.rocket-card{
+    width: 25%;
+    height:auto;
+    background-color: white;
+    color: black;
+    margin: 15px;
+}
+.rocket-img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}

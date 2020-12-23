@@ -1,10 +1,12 @@
 import React from 'react'
-import Rockets from './Rockets'
+import RocketContainer from './index'
 
 const RocketPage = () => {
     return (
         <div>
-            <Rockets />
+            {
+                RocketContainer()
+            }
         </div>
     )
 }
