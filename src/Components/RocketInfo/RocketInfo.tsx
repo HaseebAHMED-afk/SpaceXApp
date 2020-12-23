@@ -1,9 +1,15 @@
 import React from 'react'
+import { RocketInfoQuery } from '../../generated/graphql'
+import './RocketInfo.css'
 
-const RocketInfo = () => {
+interface Props{
+    data: RocketInfoQuery
+}
+
+const RocketInfo: React.FC<Props> = ({data}) => {
     return (
-        <div>
-            
+        <div className="rocket-info" >
+            <h1>{data.rocket?.rocket_name}</h1>
         </div>
     )
 }

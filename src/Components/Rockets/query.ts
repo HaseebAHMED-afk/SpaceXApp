@@ -4,7 +4,7 @@ export const ROCKET_INFO = gql `
 query Rockets{
     rockets {
       active
-      id
+      rocket_id
       flickr_images
       rocket_name
     }

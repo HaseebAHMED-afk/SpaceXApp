@@ -5,6 +5,7 @@ import Home from "./Components/Home/Home";
 import LaunchPage from "./Components/Launch/LaunchPage";
 import LaunchInfoPage from "./Components/LaunchInfo/LaunchInfoPage";
 import MainNav from "./Components/MainNav/MainNav";
+import RocketInfoPage from "./Components/RocketInfo/RocketInfoPage";
 import RocketPage from "./Components/Rockets/RocketPage";
 import ShipsPage from "./Components/Ships/ShipsPage";
 import TopNav from "./Components/TopNav/TopNav";
@@ -19,8 +20,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/launches" element={<LaunchPage />} ></Route>
           <Route path="/rockets" element={<RocketPage />} />
+          <Route path="/rockets/:id" element={<RocketInfoPage />}  />
           <Route path="/ships" element={<ShipsPage />} />
-          <Route path="/launches/:flight_number" element={<LaunchInfoPage />} />  {/* custom parameter route */}
+          <Route path="/launches/:flight_number" element={<LaunchInfoPage />} /> 
         </Routes>
       </Router>
     </div>

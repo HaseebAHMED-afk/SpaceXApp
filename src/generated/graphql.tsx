@@ -769,6 +769,26 @@ export type LaunchInfoQuery = (
   )> }
 );
 
+export type RocketInfoQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type RocketInfoQuery = (
+  { __typename?: 'Query' }
+  & { rocket?: Maybe<(
+    { __typename?: 'Rocket' }
+    & Pick<Rocket, 'active' | 'company' | 'cost_per_launch' | 'country' | 'description' | 'first_flight' | 'rocket_name' | 'rocket_type' | 'rocket_id'>
+    & { engines?: Maybe<(
+      { __typename?: 'Engines' }
+      & Pick<Engines, 'type' | 'version'>
+    )>, height?: Maybe<(
+      { __typename?: 'Dimension' }
+      & Pick<Dimension, 'meters'>
+    )> }
+  )> }
+);
+
 export type RocketsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -776,7 +796,7 @@ export type RocketsQuery = (
   { __typename?: 'Query' }
   & { rockets?: Maybe<Array<Maybe<(
     { __typename?: 'Rocket' }
-    & Pick<Rocket, 'active' | 'id' | 'flickr_images' | 'rocket_name'>
+    & Pick<Rocket, 'active' | 'rocket_id' | 'flickr_images' | 'rocket_name'>
   )>>> }
 );
 
@@ -865,11 +885,59 @@ export function useLaunchInfoLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions
 export type LaunchInfoQueryHookResult = ReturnType<typeof useLaunchInfoQuery>;
 export type LaunchInfoLazyQueryHookResult = ReturnType<typeof useLaunchInfoLazyQuery>;
 export type LaunchInfoQueryResult = Apollo.QueryResult<LaunchInfoQuery, LaunchInfoQueryVariables>;
+export const RocketInfoDocument = gql`
+    query RocketInfo($id: String!) {
+  rocket(id: $id) {
+    active
+    company
+    cost_per_launch
+    country
+    description
+    engines {
+      type
+      version
+    }
+    first_flight
+    height {
+      meters
+    }
+    rocket_name
+    rocket_type
+    rocket_id
+  }
+}
+    `;
+
+/**
+ * __useRocketInfoQuery__
+ *
+ * To run a query within a React component, call `useRocketInfoQuery` and pass it any options that fit your needs.
+ * When your component renders, `useRocketInfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useRocketInfoQuery({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useRocketInfoQuery(baseOptions: Apollo.QueryHookOptions<RocketInfoQuery, RocketInfoQueryVariables>) {
+        return Apollo.useQuery<RocketInfoQuery, RocketInfoQueryVariables>(RocketInfoDocument, baseOptions);
+      }
+export function useRocketInfoLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<RocketInfoQuery, RocketInfoQueryVariables>) {
+          return Apollo.useLazyQuery<RocketInfoQuery, RocketInfoQueryVariables>(RocketInfoDocument, baseOptions);
+        }
+export type RocketInfoQueryHookResult = ReturnType<typeof useRocketInfoQuery>;
+export type RocketInfoLazyQueryHookResult = ReturnType<typeof useRocketInfoLazyQuery>;
+export type RocketInfoQueryResult = Apollo.QueryResult<RocketInfoQuery, RocketInfoQueryVariables>;
 export const RocketsDocument = gql`
     query Rockets {
   rockets {
     active
-    id
+    rocket_id
     flickr_images
     rocket_name
   }

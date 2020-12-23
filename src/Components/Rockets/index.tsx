@@ -6,7 +6,7 @@ import Loading from '../Utils/Loading/Loading'
 const RocketContainer = () => {
     const {data,error,loading} = useRocketsQuery();
 
-    if(error || !data){
+    if(error){
         return <p>There was an error</p>
     }
 

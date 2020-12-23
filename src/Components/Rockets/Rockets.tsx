@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { RocketsQuery } from '../../generated/graphql'
 import './Rockets.css'
 
@@ -21,6 +22,8 @@ const Rockets: React.FC<Props> = ({data}) => {
                        }
                     <h2 className="rocket-name" >{rocket?.rocket_name}</h2>
                     <p className="rocket-status">{rocket?.active}</p>
+                    <Link to={`/rockets/${rocket?.rocket_id}`} ><button className="rocket-viewmore-btn" >View More</button></Link>
+                    
                 </div>
                 ))
             }
