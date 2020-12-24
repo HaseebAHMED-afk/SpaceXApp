@@ -800,6 +800,19 @@ export type RocketsQuery = (
   )>>> }
 );
 
+export type ShipInfoQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type ShipInfoQuery = (
+  { __typename?: 'Query' }
+  & { ship?: Maybe<(
+    { __typename?: 'Ship' }
+    & Pick<Ship, 'active' | 'attempted_landings' | 'class' | 'ship_id' | 'imo' | 'ship_name' | 'speed_kn' | 'successful_landings' | 'ship_type' | 'year_built' | 'weight_kg' | 'image'>
+  )> }
+);
+
 export type ShipsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -980,6 +993,50 @@ export function useRocketsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Ro
 export type RocketsQueryHookResult = ReturnType<typeof useRocketsQuery>;
 export type RocketsLazyQueryHookResult = ReturnType<typeof useRocketsLazyQuery>;
 export type RocketsQueryResult = Apollo.QueryResult<RocketsQuery, RocketsQueryVariables>;
+export const ShipInfoDocument = gql`
+    query ShipInfo($id: String!) {
+  ship(id: $id) {
+    active
+    attempted_landings
+    class
+    ship_id
+    imo
+    ship_name
+    speed_kn
+    successful_landings
+    ship_type
+    year_built
+    weight_kg
+    image
+  }
+}
+    `;
+
+/**
+ * __useShipInfoQuery__
+ *
+ * To run a query within a React component, call `useShipInfoQuery` and pass it any options that fit your needs.
+ * When your component renders, `useShipInfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useShipInfoQuery({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useShipInfoQuery(baseOptions: Apollo.QueryHookOptions<ShipInfoQuery, ShipInfoQueryVariables>) {
+        return Apollo.useQuery<ShipInfoQuery, ShipInfoQueryVariables>(ShipInfoDocument, baseOptions);
+      }
+export function useShipInfoLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ShipInfoQuery, ShipInfoQueryVariables>) {
+          return Apollo.useLazyQuery<ShipInfoQuery, ShipInfoQueryVariables>(ShipInfoDocument, baseOptions);
+        }
+export type ShipInfoQueryHookResult = ReturnType<typeof useShipInfoQuery>;
+export type ShipInfoLazyQueryHookResult = ReturnType<typeof useShipInfoLazyQuery>;
+export type ShipInfoQueryResult = Apollo.QueryResult<ShipInfoQuery, ShipInfoQueryVariables>;
 export const ShipsDocument = gql`
     query Ships {
   ships {
