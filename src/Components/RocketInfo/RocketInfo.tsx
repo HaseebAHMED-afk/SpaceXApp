@@ -14,25 +14,25 @@ const RocketInfo: React.FC<Props> = ({data}) => {
         <div className="rocket-info" >
             <h1 className="rocket_name" >Name: {data.rocket?.rocket_name}</h1>
             <hr className="separate-line"/>
-            <h1 className="rocket-manufacture" >Manufacturer: {data.rocket?.company}</h1>
+            <p className="rocket-manufacture" >Manufacturer: {data.rocket?.company}</p>
             <hr className="separate-line"/>
-            <h1 className="rocket-country" >Country: {data.rocket?.country}</h1>
+            <p className="rocket-country" >Country: {data.rocket?.country}</p>
             <hr className="separate-line"/>
-            <h1 className="rocket-cost" >Cost: $ {data.rocket?.cost_per_launch}</h1>
+            <p className="rocket-cost" >Cost: $ {data.rocket?.cost_per_launch}</p>
             <hr className="separate-line"/>
-            <h1 className="rocket-type" >Rocket Type: {data.rocket?.rocket_type}</h1>
+            <p className="rocket-type" >Rocket Type: {data.rocket?.rocket_type}</p>
             <hr className="separate-line"/>
-            <h1 className="rocket-engine-type" >Rocket Engine: {data.rocket?.engines?.type}</h1>
+            <p className="rocket-engine-type" >Rocket Engine: {data.rocket?.engines?.type}</p>
             <hr className="separate-line"/>
-            <h1 className="rocket-engine-version" >Engine Version: {data.rocket?.engines?.version}</h1>
+            <p className="rocket-engine-version" >Engine Version: {data.rocket?.engines?.version}</p>
             <hr className="separate-line"/>
-            <h1 className="first-flight" >First Flight: {data.rocket?.first_flight}</h1>
+            <p className="first-flight" >First Flight: {data.rocket?.first_flight}</p>
             <hr className="separate-line"/>
-            <h1 className="rocket-height" >Rocket Height: {data.rocket?.height?.meters} meters</h1>
+            <p className="rocket-height" >Rocket Height: {data.rocket?.height?.meters} meters</p>
             <hr className="separate-line"/>
-            <h1 className="rocket-status" >Rocket Status: {data.rocket?.active === true ? <Active /> : <InActive /> }</h1>
+            <p className="rocket-status" >Rocket Status: {data.rocket?.active === true ? <Active /> : <InActive /> }</p>
             <hr className="separate-line"/>
-            <h1 className="rocket-description">Description:</h1>
+            <p className="rocket-description">Description:</p>
             <p className="rocket-description" >Description: {data.rocket?.description}</p>
             <hr className="separate-line"/>
             <h1 className="gallery-heading" >Gallery</h1>

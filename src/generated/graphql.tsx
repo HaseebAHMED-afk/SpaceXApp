@@ -800,6 +800,17 @@ export type RocketsQuery = (
   )>>> }
 );
 
+export type ShipsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ShipsQuery = (
+  { __typename?: 'Query' }
+  & { ships?: Maybe<Array<Maybe<(
+    { __typename?: 'Ship' }
+    & Pick<Ship, 'active' | 'ship_id' | 'ship_name' | 'image'>
+  )>>> }
+);
+
 
 export const LaunchesDocument = gql`
     query Launches {
@@ -969,3 +980,38 @@ export function useRocketsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Ro
 export type RocketsQueryHookResult = ReturnType<typeof useRocketsQuery>;
 export type RocketsLazyQueryHookResult = ReturnType<typeof useRocketsLazyQuery>;
 export type RocketsQueryResult = Apollo.QueryResult<RocketsQuery, RocketsQueryVariables>;
+export const ShipsDocument = gql`
+    query Ships {
+  ships {
+    active
+    ship_id
+    ship_name
+    image
+  }
+}
+    `;
+
+/**
+ * __useShipsQuery__
+ *
+ * To run a query within a React component, call `useShipsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useShipsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useShipsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useShipsQuery(baseOptions?: Apollo.QueryHookOptions<ShipsQuery, ShipsQueryVariables>) {
+        return Apollo.useQuery<ShipsQuery, ShipsQueryVariables>(ShipsDocument, baseOptions);
+      }
+export function useShipsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ShipsQuery, ShipsQueryVariables>) {
+          return Apollo.useLazyQuery<ShipsQuery, ShipsQueryVariables>(ShipsDocument, baseOptions);
+        }
+export type ShipsQueryHookResult = ReturnType<typeof useShipsQuery>;
+export type ShipsLazyQueryHookResult = ReturnType<typeof useShipsLazyQuery>;
+export type ShipsQueryResult = Apollo.QueryResult<ShipsQuery, ShipsQueryVariables>;

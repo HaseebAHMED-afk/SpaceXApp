@@ -15,5 +15,16 @@
 .launch-images{
     width: 20%;
     height: auto;
-    margin: 10px;
+    margin: 15px;
+}
+
+@media only screen and  (max-width: 750px){
+    .launch-images{
+        width: 40%;
+    }
+}
+@media only screen and  (max-width: 550px){
+    .launch-images{
+        width: 100%;
+    }
 }

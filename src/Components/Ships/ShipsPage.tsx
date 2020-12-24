@@ -1,10 +1,12 @@
 import React from 'react'
-import Ships from './Ships'
+import ShipContainer from '.'
 
 const ShipsPage = () => {
     return (
         <div>
-            <Ships />
+            {
+                ShipContainer()
+            }
         </div>
     )
 }
