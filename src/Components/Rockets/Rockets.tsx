@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { RocketsQuery } from '../../generated/graphql'
 import Footer from '../Utils/Footer/Footer'
 import './Rockets.css'
+import {Fade} from 'react-reveal'
 
 interface Props {
     data?: RocketsQuery
@@ -17,6 +18,7 @@ const Rockets: React.FC<Props> = ({data}) => {
                 
             {
                 !!data?.rockets && data?.rockets.map((rocket,i) => (
+                    <Fade>
                     <div className="rocket-card" key={i}>
                        {
                            rocket?.flickr_images ? <img className="rocket-img" src={`${rocket.flickr_images[0]}`} alt=""/> : null
@@ -26,6 +28,7 @@ const Rockets: React.FC<Props> = ({data}) => {
                     <Link to={`/rockets/${rocket?.rocket_id}`} ><button className="rocket-viewmore-btn" >View More</button></Link>
                     
                 </div>
+                </Fade>
                 ))
             }
             </div>

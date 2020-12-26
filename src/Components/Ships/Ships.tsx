@@ -4,6 +4,7 @@ import { ShipsQuery } from '../../generated/graphql'
 import Active from '../Utils/Active/Active'
 import Footer from '../Utils/Footer/Footer'
 import InActive from '../Utils/InActive/InActive'
+import {Fade} from 'react-reveal'
 import './Ships.css'
 
 interface Props{
@@ -18,6 +19,7 @@ const Ships: React.FC<Props> = ({data}) => {
 
                  {
                 !!data?.ships && data?.ships.map((ship,i) => (
+                    <Fade>
                      <div key={i} className="ship-card">
                          {
                              ship?.image ? (<img src={`${ship?.image}`} className="ship-img" alt="ship-img"/>) : <img className="ship-img" src="https://www.spacex.com/static/images/share.jpg" alt="default-img"/>
@@ -30,6 +32,7 @@ const Ships: React.FC<Props> = ({data}) => {
                 <p className="ship-status" >{ship?.active}</p>
                 <Link to={`/ships/${ship?.ship_id}`} ><button className="link-button" >View More</button></Link>
                 </div> 
+                </Fade>
                 ))
             }
                               

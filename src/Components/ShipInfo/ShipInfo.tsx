@@ -3,6 +3,7 @@ import { ShipInfoQuery } from '../../generated/graphql'
 import Active from '../Utils/Active/Active'
 import Footer from '../Utils/Footer/Footer'
 import InActive from '../Utils/InActive/InActive'
+import {Fade} from 'react-reveal';
 import './ShipInfo.css'
 
 
@@ -13,6 +14,7 @@ interface Props{
 const ShipInfo: React.FC<Props> = ({data}) => {
     return (
         <div className="ship-info">
+            <Fade>
             <h1 className="ship-info-name" >{data.ship?.ship_name}</h1>
             <hr className="separate-line" />
             <p className="ship-info-status" >Ship Status: {data.ship?.active ? <Active /> : <InActive />}</p>
@@ -37,6 +39,7 @@ const ShipInfo: React.FC<Props> = ({data}) => {
             {
                 data.ship?.image ? <img className="ship-info-img" src={`${data.ship.image}`} alt="ship-img"/> : <p className="not-found" >No Images Found</p>
             }
+            </Fade>
             <Footer />
         </div>
     )

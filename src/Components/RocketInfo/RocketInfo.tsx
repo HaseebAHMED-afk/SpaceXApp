@@ -4,6 +4,7 @@ import Active from '../Utils/Active/Active'
 import Footer from '../Utils/Footer/Footer'
 import InActive from '../Utils/InActive/InActive'
 import './RocketInfo.css'
+import {Fade} from 'react-reveal'
 
 interface Props{
     data: RocketInfoQuery
@@ -12,6 +13,7 @@ interface Props{
 const RocketInfo: React.FC<Props> = ({data}) => {
     return (
         <div className="rocket-info" >
+            <Fade>
             <h1 className="rocket_name" >Name: {data.rocket?.rocket_name}</h1>
             <hr className="separate-line"/>
             <p className="rocket-manufacture" >Manufacturer: {data.rocket?.company}</p>
@@ -44,7 +46,7 @@ const RocketInfo: React.FC<Props> = ({data}) => {
                     }
                     </>
                 ) : <p className="not-found" >No Images Found</p>
-            }
+            }</Fade>
             <Footer />
         </div>
     )

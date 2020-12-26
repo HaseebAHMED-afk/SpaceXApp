@@ -5,6 +5,7 @@ import Failure from '../Utils/Failure/Failure'
 import Upcoming from '../Utils/Upcoming/Upcoming'
 import './LaunchInfo.css'
 import Footer from '../Utils/Footer/Footer'
+import {Fade} from 'react-reveal'
 
 interface Props {
     data: LaunchInfoQuery
@@ -23,9 +24,7 @@ const LaunchInfo: React.FC<Props> = ({data}) => {
 
     return (
         <div className="launch-info">
-             {/* <video width="320" height="240" controls >
-                   <source src={`${data.launch.links.video_link}`} /> 
-               </video> */}
+            <Fade>
             <h1 className="launchinfo-heading" >{data.launch.mission_name}</h1>
             <hr className="separate-line" />
             <p className="launchinfo-date" >Launch Date: {data.launch.launch_date_utc}</p>
@@ -47,7 +46,9 @@ const LaunchInfo: React.FC<Props> = ({data}) => {
                 }
                </>) : <p className="not-found" >No Images Found</p>
            }
+           
            </div>
+           </Fade>
            <Footer />
         </div>
     )

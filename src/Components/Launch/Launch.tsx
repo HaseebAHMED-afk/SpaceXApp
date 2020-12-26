@@ -6,6 +6,7 @@ import Footer from '../Utils/Footer/Footer'
 import Success from '../Utils/Success/Success'
 import Upcoming from '../Utils/Upcoming/Upcoming'
 import './Launch.css'
+import {Fade} from 'react-reveal'
 
 interface Props {
     data?: LaunchesQuery,
@@ -26,12 +27,14 @@ const Launch: React.FC<Props> = ({data}) => {
             {!!data?.launches && data?.launches.map(
                     (launch,i) => !!launch && 
                      (
+                         <Fade>
                         <div  key={i} className="launch-card">
                         <h2 className="launch-name">{launch.mission_name}</h2>
                        <p className="launch-year">{launch.launch_year}</p>
                       <p className="launch-success" >{launch.launch_success ? <Success /> : (launch.launch_success === false ? <Failure /> : <Upcoming />)}</p>
                       <Link to={`/launches/${launch.flight_number}`} ><button className="viewmore-btn" >View More</button></Link>
                 </div>
+                </Fade>
                  )
                 )}
             </div>
