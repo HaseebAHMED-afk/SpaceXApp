@@ -3,6 +3,7 @@ import { Button } from '@material-ui/core'
 import './Home.css'
 import Footer from '../Utils/Footer/Footer'
 import {Fade} from 'react-reveal'
+import { Link } from 'react-router-dom'
 
 const Home : React.FC = () => {
 
@@ -21,7 +22,7 @@ const Home : React.FC = () => {
                 <div className="card-detail">
                     <h1 className="card-heading">Launches</h1>
                     <p className="card-para">See all of SpaceX's launches into space</p>
-                    <Button variant="contained" className="link-btn">View</Button>
+                    <Button variant="contained" className="link-btn"><Link to={`/launches`} >View</Link></Button>
                 </div>
             </div>
             </Fade>
@@ -33,7 +34,7 @@ const Home : React.FC = () => {
                 <div className="card-detail">
                     <h1 className="card-heading">Rockets</h1>
                     <p className="card-para">View all rockets that SpaceX uses</p>
-                    <Button variant="contained" className="link-btn">View</Button>
+                    <Button variant="contained" className="link-btn"><Link to={`/rockets`} >View</Link></Button>
                 </div>
             </div>
             </Fade>
@@ -43,8 +44,8 @@ const Home : React.FC = () => {
                 <img src="https://cdn.vox-cdn.com/thumbor/PCABXCkc8mm7G63iLECRcQBmA-I=/0x0:3840x2560/1200x800/filters:focal(1613x973:2227x1587)/cdn.vox-cdn.com/uploads/chorus_image/image/62194005/GO_SEARCHER_HELO_LANDING_20181018_Helicopter_Landing_Test_2018_10_19_291_9_.0.jpg" className="card-img" alt="card-img" />
                 <div className="card-detail">
                     <h1 className="card-heading">SpaceX Fleet</h1>
-                    <p className="card-para">View all the boats & vehicles part of SpaceX Offshore Recovery System </p>
-                    <Button variant="contained" className="link-btn">View</Button>
+                    <p className="card-para">View all the boats and vehicles part of SpaceX Offshore Recovery System </p>
+                    <Button variant="contained" className="link-btn"><Link to={`/ships`} >View</Link></Button>
                 </div>
             </div>
             </Fade>

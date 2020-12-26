@@ -6,7 +6,7 @@ import './Rockets.css'
 import {Fade} from 'react-reveal'
 
 interface Props {
-    data?: RocketsQuery
+    data: RocketsQuery
 }
 
 const Rockets: React.FC<Props> = ({data}) => {
@@ -17,9 +17,9 @@ const Rockets: React.FC<Props> = ({data}) => {
             <div className="rocket-card-deck">
                 
             {
-                !!data?.rockets && data?.rockets.map((rocket,i) => (
-                    <Fade>
-                    <div className="rocket-card" key={i}>
+                !!data.rockets && data.rockets.map((rocket,i) => (
+                    <Fade key={i} >
+                    <div className="rocket-card" >
                        {
                            rocket?.flickr_images ? <img className="rocket-img" src={`${rocket.flickr_images[0]}`} alt=""/> : null
                        }

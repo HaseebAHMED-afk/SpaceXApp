@@ -9,7 +9,7 @@ import './Launch.css'
 import {Fade} from 'react-reveal'
 
 interface Props {
-    data?: LaunchesQuery,
+    data: LaunchesQuery,
 }
 
 const Launch: React.FC<Props> = ({data}) => {
@@ -24,11 +24,11 @@ const Launch: React.FC<Props> = ({data}) => {
 
             <div className="launch-deck">
 
-            {!!data?.launches && data?.launches.map(
+            {!!data.launches && data.launches.map(
                     (launch,i) => !!launch && 
                      (
-                         <Fade>
-                        <div  key={i} className="launch-card">
+                         <Fade key={i} >
+                        <div   className="launch-card">
                         <h2 className="launch-name">{launch.mission_name}</h2>
                        <p className="launch-year">{launch.launch_year}</p>
                       <p className="launch-success" >{launch.launch_success ? <Success /> : (launch.launch_success === false ? <Failure /> : <Upcoming />)}</p>

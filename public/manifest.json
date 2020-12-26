@@ -1,0 +1,17 @@
+{
+    "short_name": "Spacex",
+    "name": "SpacexCorp",
+    "icons": [
+      {
+        "src": "./images/spacex.png",
+        "sizes": "1024x1024",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ],
+    "start_url": "./build",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+  }
+  
