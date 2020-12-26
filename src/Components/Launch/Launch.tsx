@@ -8,7 +8,7 @@ import Upcoming from '../Utils/Upcoming/Upcoming'
 import './Launch.css'
 
 interface Props {
-    data: LaunchesQuery,
+    data?: LaunchesQuery,
 }
 
 const Launch: React.FC<Props> = ({data}) => {
@@ -23,7 +23,7 @@ const Launch: React.FC<Props> = ({data}) => {
 
             <div className="launch-deck">
 
-            {!!data.launches && data.launches.map(
+            {!!data?.launches && data?.launches.map(
                     (launch,i) => !!launch && 
                      (
                         <div  key={i} className="launch-card">

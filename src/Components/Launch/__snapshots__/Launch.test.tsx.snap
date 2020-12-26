@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the Launch renders the components 1`] = `
+<div
+  className="launches"
+>
+  <div
+    className="launch-heading-section"
+  >
+    <h1
+      className="main-heading"
+    >
+      SpaceX Launches
+    </h1>
+    <p
+      className="main-para"
+    >
+      See the launches that describe SpaceX's journey to the great beyond
+    </p>
+  </div>
+  <div
+    className="launch-deck"
+  />
+  <Footer />
+</div>
+`;

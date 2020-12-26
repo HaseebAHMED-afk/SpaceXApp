@@ -7,7 +7,7 @@ import InActive from '../Utils/InActive/InActive'
 import './Ships.css'
 
 interface Props{
-    data: ShipsQuery
+    data?: ShipsQuery
 }
 
 const Ships: React.FC<Props> = ({data}) => {
@@ -17,7 +17,7 @@ const Ships: React.FC<Props> = ({data}) => {
             <div className="ship-deck">
 
                  {
-                !!data.ships && data.ships.map((ship,i) => (
+                !!data?.ships && data?.ships.map((ship,i) => (
                      <div key={i} className="ship-card">
                          {
                              ship?.image ? (<img src={`${ship?.image}`} className="ship-img" alt="ship-img"/>) : <img className="ship-img" src="https://www.spacex.com/static/images/share.jpg" alt="default-img"/>
