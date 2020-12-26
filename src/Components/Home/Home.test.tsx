@@ -9,10 +9,6 @@ describe('renders component' , () =>{
 
     beforeEach(() => container = shallow(<Home />))
 
-    it('renders home component' , () => {
-        expect(container).toMatchSnapshot();
-    })
-
     it ('renders all the div' , () =>{
         expect(container.find('div').length).toBeGreaterThanOrEqual(4)
     })
